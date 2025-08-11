@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignace tshiams | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Raleway', 'sans-serif']
+                    },
+                    colors: {
+                        'gold': '#D4AF37',
+                        'dark': '#1A1A1A'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 10;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .about-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .contact-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://images.unsplash.com/photo-1526662098125-1d3013e1c916?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #D4AF37;
+            margin: 15px auto 0;
+        }
+    </style>
+</head>
+<body class="font-body text-gray-200 bg-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-sm py-4 px-6 border-b border-gold/20">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-display text-gold">Ignace tshiams</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#accueil" class="hover:text-gold transition">Accueil</a>
+                <a href="#apropos" class="hover:text-gold transition">À Propos</a>
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menuBtn" class="text-gold">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-dark/95 py-4 px-6 mt-4 rounded-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#accueil" class="hover:text-gold transition">Accueil</a>
+                <a href="#apropos" class="hover:text-gold transition">À Propos</a>
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 py-20 text-center">
+            <h1 class="font-display text-5xl md:text-7xl text-gold mb-6">Capturer l'essence du moment</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-10">Photographe professionnel spécialisé en portraits, paysages et événements. Basé à Paris, disponible à travers le monde.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#portfolio" class="bg-gold text-dark px-8 py-3 font-semibold rounded hover:bg-opacity-90 transition">Voir mon travail</a>
+                <a href="#contact" class="border border-gold text-gold px-8 py-3 font-semibold rounded hover:bg-gold hover:text-dark transition">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- À Propos Section -->
+    <section id="apropos" class="about-bg py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-display text-center mb-16 section-title">À Propos</h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -inset-4 border border-gold rounded-lg"></div>
+                        <img src="photoIgnace.jpg" 
+                             alt="Thomas Dubois, photographe" 
+                             class="relative w-full rounded-lg z-10">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-display text-gold mb-6">Ignace tshiams</h3>
+                    <p class="mb-4">Passionné et créatif, spécialisé dans la capture d’images de haute qualité pour divers domaines tels que le portrait, l’événementiel, la mode ou la photographie publicitaire. Maîtrise des techniques de prise de vue, d’éclairage et retouche photo avec des logiciels professionnels (Adobe Lightroom, Photoshop).
+                        J’ai un œil artistique et un sens du détail, capable de s’adapter aux besoins des clients et de travailler en équipe pour produire des visuels percutants.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-3">
+                                <i class="fas fa-camera text-dark text-xl"></i>
+                            </div>
+                            <div>
+                          
+                                <p class="text-sm">Expérience</p>
+                            </div>
+                        </div>
+                        
+                   
+                    </div>
+                    
+                    <a href="#" class="inline-block bg-gold text-dark px-8 py-3 rounded font-semibold hover:bg-opacity-90 transition">
+                        Télécharger mon CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-dark">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-display text-center mb-16 section-title">Mes Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark border border-gold/30 rounded-lg p-8 hover:border-gold transition">
+                    <div class="text-gold text-4xl mb-6">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="text-2xl font-display mb-4">Mariages</h3>
+                    <p class="mb-6">Capturer chaque émotion de votre journée spéciale avec discrétion et élégance.</p>
+                    <p class="text-gold font-semibold">À partir de </p>
+                </div>
+             
+                
+                <!-- Service 2 -->
+                <div class="bg-dark border border-gold/30 rounded-lg p-8 hover:border-gold transition">
+                    <div class="text-gold text-4xl mb-6">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="text-2xl font-display mb-4">Architecture</h3>
+                    <p class="mb-6">Photographie d'architecture et d'intérieurs pour promoteurs et architectes.</p>
+                    <p class="text-gold font-semibold">À partir de </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-bg py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-display text-center mb-16 section-title">Contact</h2>
+            
+            <div class="grid grid-cols-1  gap-12">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Travaillons ensemble</h3>
+                    <p class="mb-8">Vous avez un projet en tête? Discutons-en autour d'un café. Je serai ravi d'échanger avec vous sur votre vision et comment je peux la réaliser.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Adresse</p>
+                                <p>adresse complete/p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-dark"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p>adresse email</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-gold rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-dark"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Téléphone</p>
+                                <p>telephone </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-gold text-dark w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gold text-dark w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gold text-dark w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gold text-dark w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gold/20 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-display text-gold">Ignace tshiams</a>
+                    <p class="mt-2 text-gray-400">Photographe professionnel</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gold/10 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 MenjiDrc. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
